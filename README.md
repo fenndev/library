@@ -1,2 +1,2 @@
 # library
-Library application
+A simple library application written in HTML, CSS, and Javascript.
