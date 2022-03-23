@@ -4,9 +4,15 @@ function Book(title, author, pageNum, hasRead) {
     this.pageNum = pageNum;
     this.hasRead = hasRead;
     this.info = function() {
-        if(hasRead)
-            return;
-        else
-            return;
+        if(hasRead == true || hasRead == false) {
+            if(hasRead)
+                return;
+            else
+                return;
+        }
+        else {
+            return "Invalid argument for parameter hasRead.";
+        }
     }
+        
 }
