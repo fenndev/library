@@ -11,7 +11,7 @@ function Book(title, author, pageNum, hasRead) {
                 return;
         }
         else {
-            return "Invalid argument for parameter hasRead.";
+            return "Invalid argument for parameter hasRead.";   
         }
     }
         
