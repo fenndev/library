@@ -21,15 +21,18 @@ body {
 .header {
     text-align: center;
     height: 5%;
+    flex-shrink: 1;
 }
 
 .body {
+    flex-grow: 1;
     height: 80%;
     display: grid;
     grid-template: repeat(auto-fit, minmax(150px, 1fr)) / repeat(6, minmax(150px, 1fr));
 }
 
 .footer {
+    flex-shrink: 1;
     height: 5%;
     text-align: center;
 }
