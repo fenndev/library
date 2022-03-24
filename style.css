@@ -26,13 +26,7 @@ body {
 .body {
     height: 80%;
     display: grid;
-    grid-template: repeat(auto-fill, 1fr) / repeat(auto-fill, 1fr);
-}
-
-.bookshelf {
-    display: flex;
-    justify-content: space-evenly;
-    height: 100%;
+    grid-template: repeat(auto-fit, minmax(150px, 1fr)) / repeat(6, minmax(150px, 1fr));
 }
 
 .footer {
