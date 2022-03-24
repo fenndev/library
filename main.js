@@ -1,3 +1,5 @@
+let bookCollection = [];
+
 function Book(title, author, pageNum, hasRead) {
     this.title = title;
     this.author = author;
@@ -14,4 +16,8 @@ function Book(title, author, pageNum, hasRead) {
             return "Invalid argument for parameter hasRead.";   
         }
     }   
+}
+
+function addBookToLibrary(bookToAdd) {
+    bookCollection.push(bookToAdd);
 }
