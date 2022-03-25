@@ -24,7 +24,7 @@ body {
     flex-shrink: 1;
 }
 
-.body {
+.bookshelf {
     flex-grow: 1;
     height: 80%;
     display: grid;
