@@ -1,3 +1,14 @@
+/* DOM Objects */
+
+const addButton = document.querySelector(".add-btn");
+
+/* Event Listeners */
+
+addButton.addEventListener('click', () => {
+    showAddModal();
+});
+
+
 let bookCollection = [];
 
 function Book(title, author, pageNum, hasRead) {

@@ -19,24 +19,27 @@ body {
 }
 
 .header {
-    text-align: center;
-    height: 5%;
+    height: 20%;
     flex-shrink: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5rem;
 }
 
 .bookshelf {
     flex-grow: 1;
-    height: 80%;
+    height: 100%;
     display: grid;
     grid-template: repeat(auto-fit, minmax(150px, 1fr)) / repeat(6, minmax(150px, 1fr));
     gap: 10rem 2rem;
-    margin: 4rem;
+    margin: 5rem;
 }
 
 .footer {
-    flex-shrink: 1;
-    height: 5%;
+    height: 10%;
     text-align: center;
+    padding: 0 5rem;
 }
 
 .book {
@@ -54,4 +57,12 @@ body {
     position: absolute;
     right: .5rem;
     top: .5rem;
+}
+
+.add-btn {
+    padding: 20px;
+    font-size: 1.2rem;
+    border: 1px black solid;
+    border-radius: .5rem;
+
 }
