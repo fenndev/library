@@ -24,7 +24,6 @@ bookForm.addEventListener('submit', (event) => {
     let readBoolToAdd = bookForm.elements['read'].checked;
     let newBook = new Book(titleToAdd, authorToAdd, pageNumToAdd, readBoolToAdd);
     addBookToLibrary(newBook);
-    console.log(bookCollection);
     updateDisplay();
 })
 
@@ -53,7 +52,6 @@ function addBookToLibrary(bookToAdd) {
 
 function deleteBook(bookIndex) {
     bookCollection.splice(bookIndex, 1);
-    console.log(bookCollection);
     updateDisplay();
 }
 
