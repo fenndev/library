@@ -23,7 +23,7 @@ submitButton.addEventListener('click', () => {
     let readBoolToAdd = document.querySelector(".read").checked;
     let newBook = new Book(titleToAdd, authorToAdd, pageNumToAdd, readBoolToAdd);
     addBookToLibrary(newBook);
-    console.log(bookCollection);
+    console.log(bookCollection);    
 })
 
 
