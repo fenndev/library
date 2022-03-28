@@ -1,6 +1,7 @@
 /* DOM Objects */
 
 const addButton = document.querySelector(".add-btn");
+const bookShelf = document.querySelector(".bookshelf");
 
 /* Event Listeners */
 
