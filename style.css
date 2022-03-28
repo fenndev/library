@@ -122,21 +122,13 @@ body {
 }
 
 .submit-btn {
-    height: 4rem;
+    height: 3rem;
     width: 8rem;
-    font-size: 1.2rem;
-    border: 1px black solid;
-    border-radius: .5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: black;
+    align-self: flex-end;
+    border-radius: .75rem;
 }
 
-.submit-button-box {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+.modal__title {
+    font-size: 2rem;
+    font-weight: bold;
 }
