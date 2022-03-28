@@ -34,7 +34,7 @@ body {
 }
 
 .footer {
-    flex-shrink: 1;
+    flex-shrink: 0;
     height: 5%;
     text-align: center;
 }
@@ -45,13 +45,13 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
     border: 1px solid black;
     border-radius: 2rem;
+    padding: 2rem;
 }
 
 .delete-btn {
     position: absolute;
-    right: .5rem;
-    top: .5rem;
+    right: 1rem;
+    top: 1rem;
 }
