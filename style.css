@@ -66,6 +66,7 @@ body {
     font-size: 1.2rem;
     border: 1px black solid;
     border-radius: .5rem;
+    cursor: pointer;
 }
 
 .modal {
@@ -99,10 +100,43 @@ body {
     justify-content: space-between;
     align-items: left;
     height: 60%;
+    width: 60%;
+}
+
+.book-read {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.modal__section {
+    display: flex;
+    flex-direction: column;
 }
 
 .cancel-btn {
     position: absolute;
     top: 2.5rem;
     right: 2.5rem;
+    cursor: pointer;
+}
+
+.submit-btn {
+    height: 4rem;
+    width: 8rem;
+    font-size: 1.2rem;
+    border: 1px black solid;
+    border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.submit-button-box {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
