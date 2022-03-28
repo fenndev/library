@@ -27,16 +27,6 @@ bookForm.addEventListener('submit', (event) => {
     console.log(bookCollection);
 })
 
-// submitButton.addEventListener('click', () => {
-//     let titleToAdd = document.querySelector("#input-title").textContent;
-//     let authorToAdd = document.querySelector("#input-author").textContent;
-//     let pageNumToAdd = document.querySelector("#input-author").textContent;
-//     let readBoolToAdd = document.querySelector(".read").checked;
-//     let newBook = new Book(titleToAdd, authorToAdd, pageNumToAdd, readBoolToAdd);
-//     addBookToLibrary(newBook);
-//     console.log(bookCollection);
-// })
-
 
 function hideModal() {
     modal.style.display = "none";
