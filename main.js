@@ -51,11 +51,18 @@ function addBookToLibrary(bookToAdd) {
     bookCollection.push(bookToAdd);
 }
 
+function deleteBook(bookIndex) {
+    bookCollection.splice(bookIndex, 1);
+    console.log(bookCollection);
+    updateDisplay();
+}
+
 function updateDisplay() {
     bookShelf.innerHTML = "";
     bookCollection.forEach(book => {
         let bookToDisplay = document.createElement('div');
         bookToDisplay.className = 'book';
+        bookToDisplay.setAttribute("data-index", `${bookCollection.indexOf(book)}`);
         let titleToDisplay = document.createElement('h2');
         titleToDisplay.className = 'book__title';
         titleToDisplay.textContent = book.title;
@@ -80,6 +87,9 @@ function updateDisplay() {
         let svgToDisplay = document.createElement('img');
         svgToDisplay.className = 'delete-btn';
         svgToDisplay.setAttribute('src', 'img/cross-filled-symbolic.svg');
+        svgToDisplay.addEventListener('click', () => {
+            deleteBook(svgToDisplay.parentElement.getAttribute('data-index'));
+        })
         
 
         bookToDisplay.appendChild(titleToDisplay);
