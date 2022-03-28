@@ -23,7 +23,6 @@ body {
 /* Header */
 
 .header {
-    flex: 0 1 20%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,7 +30,7 @@ body {
 }
 
 .add-btn {
-    padding: 20px;
+    padding: 2rem;
     font-size: 1.2rem;
     border: 1px black solid;
     border-radius: .5rem;
@@ -101,7 +100,6 @@ body {
     background-color: rgba(0, 0, 0, 10%);
     backdrop-filter: blur(2px);
 }
-
 
 .modal__title {
     font-size: 2rem;
