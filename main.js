@@ -21,7 +21,7 @@ bookForm.addEventListener('submit', (event) => {
     let titleToAdd = bookForm.elements['input-title'].value;
     let authorToAdd = bookForm.elements['input-author'].value;
     let pageNumToAdd = bookForm.elements['input-author'].value;
-    let readBoolToAdd = bookForm.elements['read'].value;
+    let readBoolToAdd = bookForm.elements['read'].checked;
     let newBook = new Book(titleToAdd, authorToAdd, pageNumToAdd, readBoolToAdd);
     addBookToLibrary(newBook);
     console.log(bookCollection);
