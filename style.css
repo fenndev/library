@@ -6,7 +6,7 @@
 
 body {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -66,4 +66,43 @@ body {
     font-size: 1.2rem;
     border: 1px black solid;
     border-radius: .5rem;
+}
+
+.modal {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 10%);
+    backdrop-filter: blur(2px);
+}
+
+.modal__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 40%;
+    border-radius: 5rem;
+    border: 2px black solid;
+    background-color: white;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    height: 60%;
+}
+
+.cancel-btn {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
 }
