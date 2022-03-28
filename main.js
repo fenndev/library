@@ -6,6 +6,10 @@ const modal = document.querySelector(".modal");
 const cancelButton = document.querySelector(".cancel-btn");
 const bookForm = document.querySelector(".form");
 
+/* Global Variables */
+
+let bookCollection = [];
+
 /* Event Listeners */
 
 addButton.addEventListener('click', () => {
@@ -21,9 +25,11 @@ bookForm.addEventListener('submit', (event) => {
     submitForm();
 })
 
-let bookCollection = [];
+/* OnLoad Functions */
+
 updateDisplay();
 
+/* Modal Controls */
 
 function hideModal() {
     modal.style.display = "none";
@@ -39,9 +45,11 @@ function submitForm() {
     let pageNumToAdd = bookForm.elements['input-pages'].value;
     let readBoolToAdd = bookForm.elements['read'].checked;
     let newBook = new Book(titleToAdd, authorToAdd, pageNumToAdd, readBoolToAdd);
-    addBookToLibrary(newBook);
+    addBook(newBook);
     updateDisplay();
 }
+
+/* Book Functions */
 
 function Book(title, author, pageNum, hasRead) {
     this.title = title;
@@ -50,7 +58,7 @@ function Book(title, author, pageNum, hasRead) {
     this.hasRead = hasRead;
 }
 
-function addBookToLibrary(bookToAdd) {
+function addBook(bookToAdd) {
     bookCollection.push(bookToAdd);
 }
 
@@ -59,73 +67,77 @@ function deleteBook(bookIndex) {
     updateDisplay();
 }
 
+/* Display Functions */
+
 function updateDisplay() {
     bookShelf.innerHTML = "";
-    if(bookCollection.length == 0) {
-        let emptyBookshelf = document.createElement('div');
-        emptyBookshelf.className = 'empty-bookshelf';
-        let emptyTitle = document.createElement('h2');
-        emptyTitle.className = 'empty-title';
-        emptyTitle.textContent = "No Books?"
-        let emptyPrompt = document.createElement('h3');
-        emptyPrompt.className = 'empty-prompt';
-        emptyPrompt.textContent = 'Add some now to your library!';
-        let emptyButtonContainer = document.createElement('div');
-        emptyButtonContainer.className = 'button-box';
-        let emptyButton = document.createElement('a');
-        emptyButton.className = 'add-btn';
-        emptyButton.textContent = 'Add Book';
-        emptyButtonContainer.appendChild(emptyButton);
-        emptyButton.addEventListener('click', () => {
-            showModal();
+    if(bookCollection.length == 0)
+        displayEmptyBookshelf();
+    else
+        displayNewBooks();
+}
+
+function displayEmptyBookshelf() {
+    let emptyBookshelf = document.createElement('div');
+    emptyBookshelf.className = 'empty-bookshelf';
+    let emptyTitle = document.createElement('h2');
+    emptyTitle.className = 'empty-title';
+    emptyTitle.textContent = "No Books?"
+    let emptyPrompt = document.createElement('h3');
+    emptyPrompt.className = 'empty-prompt';
+    emptyPrompt.textContent = 'Add some now to your library!';
+    let emptyButtonContainer = document.createElement('div');
+    emptyButtonContainer.className = 'button-box';
+    let emptyButton = document.createElement('a');
+    emptyButton.className = 'add-btn';
+    emptyButton.textContent = 'Add Book';
+    emptyButtonContainer.appendChild(emptyButton);
+    emptyButton.addEventListener('click', () => {
+        showModal();
+    });
+    emptyBookshelf.appendChild(emptyTitle);
+    emptyBookshelf.appendChild(emptyPrompt);
+    emptyBookshelf.appendChild(emptyButtonContainer);
+    bookShelf.appendChild(emptyBookshelf);
+}
+
+function displayNewBooks() {
+    bookCollection.forEach(book => {
+        let bookToDisplay = document.createElement('div');
+        bookToDisplay.className = 'book';
+        bookToDisplay.setAttribute("data-index", `${bookCollection.indexOf(book)}`);
+        let titleToDisplay = document.createElement('h2');
+        titleToDisplay.className = 'book__title';
+        titleToDisplay.textContent = book.title;
+        let authorToDisplay = document.createElement('h2');
+        authorToDisplay.className = 'book__author';
+        authorToDisplay.textContent = book.author;
+        let pageNumToDisplay = document.createElement('h2');
+        pageNumToDisplay.className = 'book__pages';
+        pageNumToDisplay.textContent = book.pageNum;
+        let labelBoxToDisplay = document.createElement('div');
+        labelBoxToDisplay.className = 'label-box';
+        let labelToDisplay = document.createElement('label');
+        labelToDisplay.htmlFor = 'read-box';
+        labelToDisplay.textContent = 'Read'
+        let readBoxToDisplay = document.createElement('input');
+        readBoxToDisplay.setAttribute("type", "checkbox");
+        readBoxToDisplay.className = "read-box";
+        labelBoxToDisplay.appendChild(labelToDisplay);
+        labelBoxToDisplay.appendChild(readBoxToDisplay);
+        if(book.hasRead)
+            readBoxToDisplay.checked = true;
+        let svgToDisplay = document.createElement('img');
+        svgToDisplay.className = 'delete-btn';
+        svgToDisplay.setAttribute('src', 'img/cross-filled-symbolic.svg');
+        svgToDisplay.addEventListener('click', () => {
+            deleteBook(svgToDisplay.parentElement.getAttribute('data-index'));
         });
-
-        emptyBookshelf.appendChild(emptyTitle);
-        emptyBookshelf.appendChild(emptyPrompt);
-        emptyBookshelf.appendChild(emptyButtonContainer);
-        bookShelf.appendChild(emptyBookshelf);
-    }
-    else {
-        bookCollection.forEach(book => {
-            let bookToDisplay = document.createElement('div');
-            bookToDisplay.className = 'book';
-            bookToDisplay.setAttribute("data-index", `${bookCollection.indexOf(book)}`);
-            let titleToDisplay = document.createElement('h2');
-            titleToDisplay.className = 'book__title';
-            titleToDisplay.textContent = book.title;
-            let authorToDisplay = document.createElement('h2');
-            authorToDisplay.className = 'book__author';
-            authorToDisplay.textContent = book.author;
-            let pageNumToDisplay = document.createElement('h2');
-            pageNumToDisplay.className = 'book__pages';
-            pageNumToDisplay.textContent = book.pageNum;
-            let labelBoxToDisplay = document.createElement('div');
-            labelBoxToDisplay.className = 'label-box';
-            let labelToDisplay = document.createElement('label');
-            labelToDisplay.htmlFor = 'read-box';
-            labelToDisplay.textContent = 'Read'
-            let readBoxToDisplay = document.createElement('input');
-            readBoxToDisplay.setAttribute("type", "checkbox");
-            readBoxToDisplay.className = "read-box";
-            labelBoxToDisplay.appendChild(labelToDisplay);
-            labelBoxToDisplay.appendChild(readBoxToDisplay);
-            if(book.hasRead)
-                readBoxToDisplay.checked = true;
-            let svgToDisplay = document.createElement('img');
-            svgToDisplay.className = 'delete-btn';
-            svgToDisplay.setAttribute('src', 'img/cross-filled-symbolic.svg');
-            svgToDisplay.addEventListener('click', () => {
-                deleteBook(svgToDisplay.parentElement.getAttribute('data-index'));
-            })
-            
-
-            bookToDisplay.appendChild(titleToDisplay);
-            bookToDisplay.appendChild(authorToDisplay);
-            bookToDisplay.appendChild(pageNumToDisplay);
-            bookToDisplay.appendChild(labelBoxToDisplay);
-            bookToDisplay.appendChild(svgToDisplay);
-
-            bookShelf.appendChild(bookToDisplay);
-        });
-    }
+        bookToDisplay.appendChild(titleToDisplay);
+        bookToDisplay.appendChild(authorToDisplay);
+        bookToDisplay.appendChild(pageNumToDisplay);
+        bookToDisplay.appendChild(labelBoxToDisplay);
+        bookToDisplay.appendChild(svgToDisplay);
+        bookShelf.appendChild(bookToDisplay);
+    });
 }
