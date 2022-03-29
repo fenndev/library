@@ -87,12 +87,12 @@ function updateDisplay() {
 
 function displayEmptyBookshelf() {
     let emptyBookshelf = document.createElement('div');
-    emptyBookshelf.className = 'empty-bookshelf';
+    emptyBookshelf.className = 'empty__bookshelf';
     let emptyTitle = document.createElement('h2');
-    emptyTitle.className = 'empty-title';
+    emptyTitle.className = 'empty__title';
     emptyTitle.textContent = "No Books?"
     let emptyPrompt = document.createElement('h3');
-    emptyPrompt.className = 'empty-prompt';
+    emptyPrompt.className = 'empty__prompt';
     emptyPrompt.textContent = 'Add some now to your library!';
     let emptyButtonContainer = document.createElement('div');
     emptyButtonContainer.className = 'button-box';
@@ -128,6 +128,7 @@ function displayNewBooks() {
         let labelToDisplay = document.createElement('label');
         labelToDisplay.htmlFor = 'read-box';
         labelToDisplay.textContent = 'Read'
+        labelToDisplay.className = 'book__read';
         let readBoxToDisplay = document.createElement('input');
         readBoxToDisplay.setAttribute("type", "checkbox");
         readBoxToDisplay.className = "read-box";
