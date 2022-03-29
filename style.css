@@ -60,10 +60,9 @@ body {
 }
 
 .add-btn {
-    padding: 1.4rem;
-    font-size: 1.4rem;
+    padding: 1.4rem 2.8rem;
+    font-size: 1.6rem;
     border: none;
-    border: 1px var(--gnome-off-black) solid;
     border-radius: .5rem;
     cursor: pointer;
     background-color: var(--gnome-blue);
@@ -119,8 +118,6 @@ body {
 .book__read {
     font-size: 1.8rem;
 }
-
-
 
 .delete-btn {
     position: absolute;
@@ -260,6 +257,7 @@ body {
     align-self: flex-end;
     border-radius: 1rem;
     font-size: 2rem;
+    border: none;
     background-color: var(--gnome-blue);
     color: var(--gnome-off-white);
     font-weight: 700;
