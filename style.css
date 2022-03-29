@@ -73,7 +73,6 @@ body {
 /* Bookshelf */ 
 
 .bookshelf {
-    flex: 1 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
     grid-auto-rows: 400px;
@@ -119,6 +118,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 4rem;
 }
 
