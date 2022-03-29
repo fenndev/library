@@ -1,13 +1,21 @@
-/* General */
+/* Resets */
 
 * {
-    /* Variables */
-
-    /* Resets */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Variables */
+
+:root {
+    --gnome-blue: #1c71d8;
+    --gnome-off-black: #241f31;
+    --gnome-off-black-rgb: 36, 31, 49;
+    --gnome-off-white: #f6f5f4;
+}
+
+/* General */
 
 body {
     height: 100%;
