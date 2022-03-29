@@ -9,6 +9,12 @@
 /* Variables */
 
 :root {
+    /* Fonts */
+    
+    --gnome-body-font: 'Noto Sans', sans-serif;
+
+    /* Colors */
+
     --gnome-blue: #1c71d8;
     --gnome-off-black: #241f31;
     --gnome-off-black-rgb: 36, 31, 49;
@@ -26,6 +32,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-family: var(--gnome-body-font);
 }
 
 /* Header */
@@ -35,6 +42,10 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 2rem 5rem;
+}
+
+.header__title, .header__subtitle {
+    font-weight: 700;
 }
 
 .add-btn {
