@@ -26,11 +26,12 @@
 /* General */
 
 body {
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
 }
 
 .container {
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -118,7 +119,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    gap: 4rem;
 }
 
 .empty__title {
@@ -132,13 +133,15 @@ body {
 /* Footer */
 
 .footer {
-    flex: 0 1 20%;
-    text-align: center;
+    flex: 0 1 10%;
     padding: 0 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .copyright {
-
+    text-align: center;
 }
 
 .copyright__date {

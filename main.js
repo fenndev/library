@@ -94,18 +94,15 @@ function displayEmptyBookshelf() {
     let emptyPrompt = document.createElement('h3');
     emptyPrompt.className = 'empty__prompt';
     emptyPrompt.textContent = 'Add some now to your library!';
-    let emptyButtonContainer = document.createElement('div');
-    emptyButtonContainer.className = 'button-box';
     let emptyButton = document.createElement('a');
     emptyButton.className = 'add-btn';
     emptyButton.textContent = 'Add Book';
-    emptyButtonContainer.appendChild(emptyButton);
     emptyButton.addEventListener('click', () => {
         showModal();
     });
     emptyBookshelf.appendChild(emptyTitle);
     emptyBookshelf.appendChild(emptyPrompt);
-    emptyBookshelf.appendChild(emptyButtonContainer);
+    emptyBookshelf.appendChild(emptyButton);
     bookShelf.appendChild(emptyBookshelf);
 }
 
