@@ -129,7 +129,7 @@ function displayNewBooks() {
         let pageNumToDisplay = document.createElement('h2');
         pageNumToDisplay.className = 'book__pages';
         let numberFormatter = new Intl.NumberFormat('en-US');
-        let formattedPageNum = numberFormatter.format(book.pageNum);
+        let formattedPageNum = numberFormatter.format(book.pageNum);    
         pageNumToDisplay.textContent = `${formattedPageNum} pages`;
         let labelBoxToDisplay = document.createElement('div');
         labelBoxToDisplay.className = 'book__label-box';
