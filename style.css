@@ -74,8 +74,9 @@ body {
 
 .bookshelf {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
-    grid-auto-rows: 400px;
+    grid-template-columns: repeat(auto-fit, minmax(min(35rem, 100%), 45rem));
+    justify-content: center;
+    grid-auto-rows: 40rem;
     gap: 4rem;
     margin: 2rem;
 }
@@ -84,34 +85,49 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid black;
+    gap: 3rem;
+    border: 2px solid black;
     border-radius: 2rem;
     padding: 2rem;
 }
 
 .book__title {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
+    width: 90%;
 }
 
 .book__author {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
 }
 
 .book__pages {
-    font-size: 1.8rem;  
+    font-size: 2rem; 
+}
+
+.book__label-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.book__label-box input {
+    height: 1.6rem;
+    width: 1.6rem;
 }
 
 .book__read {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 }
+
+
 
 .delete-btn {
     position: absolute;
     right: 2rem;
     top: 2rem;
-    height: 3.2rem;
-    width: 3.2rem;
+    height: 3rem;
+    width: 3rem;
     cursor: pointer;
 }
 

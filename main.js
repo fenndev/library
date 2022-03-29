@@ -121,7 +121,7 @@ function displayNewBooks() {
         pageNumToDisplay.className = 'book__pages';
         pageNumToDisplay.textContent = book.pageNum;
         let labelBoxToDisplay = document.createElement('div');
-        labelBoxToDisplay.className = 'label-box';
+        labelBoxToDisplay.className = 'book__label-box';
         let labelToDisplay = document.createElement('label');
         labelToDisplay.htmlFor = 'read-box';
         labelToDisplay.textContent = 'Read'
