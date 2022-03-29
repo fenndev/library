@@ -67,6 +67,14 @@ function deleteBook(bookIndex) {
     updateDisplay();
 }
 
+function toggleReadStatus(bookIndex) {
+    let currentBook = bookCollection[bookIndex];
+    if(currentBook.hasRead)
+        currentBook.hasRead = false;   
+    else
+        currentBook.hasRead = true;
+}
+
 /* Display Functions */
 
 function updateDisplay() {
@@ -127,6 +135,9 @@ function displayNewBooks() {
         labelBoxToDisplay.appendChild(readBoxToDisplay);
         if(book.hasRead)
             readBoxToDisplay.checked = true;
+        readBoxToDisplay.addEventListener('click', () => {
+            toggleReadStatus(svgToDisplay.parentElement.getAttribute('data-index'));
+        });
         let svgToDisplay = document.createElement('img');
         svgToDisplay.className = 'delete-btn';
         svgToDisplay.setAttribute('src', 'img/cross-filled-symbolic.svg');
