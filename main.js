@@ -47,6 +47,15 @@ function submitForm() {
     let newBook = new Book(titleToAdd, authorToAdd, pageNumToAdd, readBoolToAdd);
     addBook(newBook);
     updateDisplay();
+    clearForm();
+    hideModal();
+}
+
+function clearForm() {
+    bookForm.elements['input-title'].value = "";
+    bookForm.elements['input-author'].value = "";
+    bookForm.elements['input-pages'].value = "";
+    bookForm.elements['read'].checked = false;
 }
 
 /* Book Functions */
