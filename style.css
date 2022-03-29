@@ -168,7 +168,8 @@ body {
 }
 
 .modal__title {
-    font-size: 1.8rem;
+    font-size: 2.8rem;
+    font-weight: 700;
 }
 
 .modal__card {
@@ -187,27 +188,35 @@ body {
 .modal__section {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
 }
 
 .modal__section label {
-    font-size: 1.4rem;
+    font-size: 2.4rem;
+    font-weight: 700;
 }
 
 .modal__section input {
-    height: 1.6rem;
-    padding: 1rem 0.5rem;
-    font-size: 1.2rem;
+    height: 2.8rem;
+    padding: 1rem;
+    font-size: 1.4rem;
 }
 
 .modal__read {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    font-weight: 700;
+    font-size: 2.4rem;
 }
 
 .modal__read input {
-    height: 1.2rem;
-    width: 1.2rem;
+    height: 2rem;
+    width: 2rem;
+}
+
+.modal__read label {
+    font-size: 2.4rem;
 }
 
 .form {
@@ -234,10 +243,5 @@ body {
     font-size: 1.4rem;
     background-color: var(--gnome-blue);
     color: var(--gnome-off-white);
-}
-
-.modal__read {
-    display: flex;
-    align-items: center;
-    font-size: 2.4rem;
+    font-weight: 700;
 }
