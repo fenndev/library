@@ -213,6 +213,7 @@ body {
 .modal__read input {
     height: 2rem;
     width: 2rem;
+    cursor: pointer;
 }
 
 .modal__read label {
@@ -236,11 +237,12 @@ body {
 }
 
 .submit-btn {
-    height: 4rem;
-    width: 10rem;
+    height: 5rem;
+    width: 15rem;
+    cursor: pointer;
     align-self: flex-end;
     border-radius: 1rem;
-    font-size: 1.4rem;
+    font-size: 2rem;
     background-color: var(--gnome-blue);
     color: var(--gnome-off-white);
     font-weight: 700;
