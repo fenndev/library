@@ -125,10 +125,12 @@ function displayNewBooks() {
         titleToDisplay.textContent = book.title;
         let authorToDisplay = document.createElement('h2');
         authorToDisplay.className = 'book__author';
-        authorToDisplay.textContent = book.author;
+        authorToDisplay.textContent = `by ${book.author}`;
         let pageNumToDisplay = document.createElement('h2');
         pageNumToDisplay.className = 'book__pages';
-        pageNumToDisplay.textContent = book.pageNum;
+        let numberFormatter = new Intl.NumberFormat('en-US');
+        let formattedPageNum = numberFormatter.format(book.pageNum);
+        pageNumToDisplay.textContent = `${formattedPageNum} pages`;
         let labelBoxToDisplay = document.createElement('div');
         labelBoxToDisplay.className = 'book__label-box';
         let labelToDisplay = document.createElement('label');
