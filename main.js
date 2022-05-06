@@ -5,6 +5,7 @@ const bookShelf = document.querySelector(".bookshelf");
 const modal = document.querySelector(".modal");
 const cancelButton = document.querySelector(".cancel-btn");
 const bookForm = document.querySelector(".form");
+const submitButton = document.querySelector(".submit-btn");
 
 /* Global Variables */
 
@@ -20,10 +21,33 @@ cancelButton.addEventListener('click', () => {
     hideModal();
 })
 
-bookForm.addEventListener('submit', (event) => {
+submitButton.addEventListener('click', (event) => {
     event.preventDefault();
-    submitForm();
-})
+    let formElements = Array.from(bookForm.elements);
+    let formInputs = [];
+    let elementsToValidate = ['text', 'number'];
+    for(const input in formElements) {
+        let currentElement = formElements[input];
+        if(elementsToValidate.includes(currentElement.type)) formInputs.push(currentElement);
+    }
+        for(const input in formInputs) {
+            let currentInput = formInputs[input];
+            if(currentInput.validity.valueMissing || (currentInput.type == 'number' && currentInput.value <= 0)) {
+                switch(currentInput.id.replace('input-', '')) {
+                    case 'pages':
+                        currentInput.setCustomValidity(`The book must have a page count that is greater than 0.`);
+                        break;
+                    default:
+                        currentInput.setCustomValidity(`The book must have a specified ${currentInput.id.replace('input-', '')}.`);
+                        break;
+                }
+                currentInput.reportValidity();
+                break;
+            }
+            
+        }
+    if(formInputs.every(isFormValid)) submitForm();
+});
 
 /* OnLoad Functions */
 
@@ -52,10 +76,17 @@ function submitForm() {
 }
 
 function clearForm() {
-    bookForm.elements['input-title'].value = "";
-    bookForm.elements['input-author'].value = "";
-    bookForm.elements['input-pages'].value = "";
-    bookForm.elements['read'].checked = false;
+    bookForm.reset();
+}
+
+const isFormValid = (formElement) => {
+    if(formElement.type == 'number' && formElement.value <= 0)
+            return false;
+    if(formElement.validity.valueMissing) {
+        if(formElement.willValidate) return false;
+        else return true;
+    }
+    else return true;
 }
 
 /* Book Functions */
